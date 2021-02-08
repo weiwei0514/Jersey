@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>球衣客製化系統</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="icon" href="./image/favicon.ico">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="row">
+        <div id="boxLeft" class="col-12 d-flex flex-column align-items-center col-sm-9 navbar-light">
+            <!-- 正反面按鈕 -->
+            <div class="switchBtnBox d-flex">
+                <div id="front" class="switchBtn flex-fill">
+                    <p class="p-1 mb-0 text-white">正面</p>
+                </div>
+                <div id="back" class="switchBtn flex-fill">
+                    <p class="p-1 mb-0 text-white">背面</p>
+                </div>
+            </div>
+            <!-- 球衣正面 -->
+            <div id="myjerseyFront" class="trans2">
+                <div class="jerseyContain">
+                    <img src="./image/jersey.png" alt="">
+                    <img id="frontColor" src="./image/jersey.png" alt="">
+                    <!-- 隊名 -->
+                    <p data-name="Teamname9" id="teamName" class="stroke-single">Teamname9</p>
+                    <!-- 號碼 -->
+                    <p data-num="23" id="mynumber" class="stroke-single">23</p>
+                    <!-- Logo -->
+                    <div id="logoImg"><img src="" alt="" id="teamLogo_img"></div>
+                </div>
+            </div>
+            <!-- 球衣背面 -->
+            <div id="myjerseyBack" class="trans2">
+                <div class="jerseyContain">
+                    <img src="./image/jersey_back.png" alt="">
+                    <img id="backColor" src="./image/jersey_back.png" alt="">
+                    <!-- 球員姓名 -->
+                    <p id="playerName" class="stroke-single">PLAYERNAME</p>
+                    <!-- 號碼 -->
+                    <p data-num="23" id="mynumberBack" class="stroke-single">23</p>
+                </div>
+            </div>
+            <!-- toggler -->
+            <div class="navbar-toggler" type="button" id="ham" data-toggle-class="onoff">
+                <span id="ox" class="navbar-toggler-icon"></span>
+            </div>
+
+        </div>
+
+        <!-- 右邊區塊 -->
+        <div id="boxRight" class="col-sm-3 col-xs">
+            <!------------------------- 選單 ----------------------------->
+            <div id="selects" class="trans w-100">
+                <div class="mySelect" onClick="selectBtn(jerseyColor)">
+                    <img src="./image/color.png" alt="">
+                    <p>球衣顏色</p>
+                </div>
+                <div class="mySelect" onClick="selectBtn(jerseyTeam)">
+                    <img src="./image/teamname.png" alt="">
+                    <p>隊名</p>
+                </div>
+                <div class="mySelect" onClick="selectBtn(jerseyNum)">
+                    <img src="./image/number.png" alt="">
+                    <p>號碼</p>
+                </div>
+                <div class="mySelect" onClick="selectBtn(jerseyName)">
+                    <img src="./image/playername.png" alt="">
+                    <p>球員姓名</p>
+                </div>
+                <div class="mySelect" onClick="selectBtn(jerseyLogo)">
+                    <img src="./image/logo.png" alt="">
+                    <p>隊徽</p>
+                </div>
+            </div>
+
+            <!------------------------- 球衣顏色 ----------------------------->
+
+            <div id="jerseyColor" class="flex-column h-100 w-100 trans">
+                <div class="selectHeader py-4">
+                    <p>
+                        球衣顏色
+                    </p>
+                </div>
+                <div class="selectContain d-flex justify-content-center flex-wrap">
+                    <div class="colorBox text-center w-35">
+                        <div id="colorBlack" class="colorOption">
+                        </div>
+                        <p>霸氣黑</p>
+                    </div>
+                    <div class="colorBox text-center w-35">
+                        <div id="colorWhite" class="colorOption ">
+                        </div>
+                        <p>超極白</p>
+                    </div>
+                    <div class="colorBox text-center w-35">
+                        <div id="colorBlue" class="colorOption ">
+                        </div>
+                        <p>炭治藍</p>
+                    </div>
+                    <div class="colorBox text-center w-35">
+                        <div id="colorPurple" class="colorOption ">
+                        </div>
+                        <p>彌豆紫</p>
+                    </div>
+                    <div class="colorBox text-center w-35">
+                        <div id="colorRed" class="colorOption ">
+                        </div>
+                        <p>炎柱紅</p>
+                    </div>
+                    <div class="colorBox text-center w-35">
+                        <div id="colorYellow" class="colorOption ">
+                        </div>
+                        <p>善逸黃</p>
+                    </div>
+                    <div class="colorBox text-center w-35">
+                        <div id="colorForest" class="colorOption ">
+                        </div>
+                        <p>森林綠</p>
+                    </div>
+                    <div class="colorBox text-center w-35">
+                        <div id="colorLake" class="colorOption ">
+                        </div>
+                        <p>湖水綠</p>
+                    </div>
+                </div>
+                <div class="selectFooter d-flex text-center py-4">
+                    <div class="selectCancle">
+                        <i class="fas fa-times text-secondary" onClick="cancleClick(jerseyColor)"></i>
+                    </div>
+                    <div class="selectConfirm">
+                        <i class="fas fa-check text-secondary" onClick="confirmClick(jerseyColor)"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!------------------------- 隊名 ----------------------------->
+            <div id="jerseyTeam" class="flex-column h-100 w-100 trans">
+                <div class="selectHeader py-4">
+                    <p>隊名</p>
+                </div>
+                <div class="selectContain">
+                    <div class="w-75 mx-auto mt-3">
+                        <p class="mb-0">隊伍名稱</p>
+                        <input type="text" name="" id="teamNameInput" class="form-control" value="Teamname9">
+                    </div>
+                    <div class="w-75 mx-auto mt-3">
+                        <p class="mb-0">隊名字體</p>
+                        <select name="" id="teamNameFont" class="custom-select">
+                            <optgroup label="英文字體">
+                                <option value="E-Team-1">E-Team-1</option>
+                                <option value="E-Team-2">E-Team-2</option>
+                                <option value="E-Team-3">E-Team-3</option>
+                            </optgroup>
+                            <optgroup label="中文字體">
+                                <option value="C-Team-1">華康新綜藝體</option>
+                                <option value="C-Team-2">KSW新豪龍N</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="w-75 mx-auto mt-3">
+                        <p class="mb-0">隊名顏色</p>
+                        <input type="color" name="" id="teamNameColor" class="form-control" value="#ffffff">
+                    </div>
+                    <div class="w-75 mx-auto mt-3">
+                        <p class="mb-0">隊名邊框顏色</p>
+                        <input type="color" name="" id="borderColor" class="form-control" value="#6d6d6d">
+                    </div>
+                    <div class="w-75 mx-auto mt-3">
+                        <p class="mb-0">隊名尺寸</p>
+                        <input type="range" min="-100" max="100" value="0" class="slider form-control" id="sizeRange">
+                    </div>
+                    <div class="w-75 mx-auto mt-3">
+                        <p class="mb-0">上下位置</p>
+                        <input type="range" min="-100" max="100" value="0" class="slider form-control"
+                            id="positionRange">
+                    </div>
+                </div>
+                <div class="selectFooter d-flex text-center py-4">
+                    <div class="selectCancle">
+                        <i class="fas fa-times text-secondary" onClick="cancleClick(jerseyTeam)"></i>
+                    </div>
+                    <div class="selectConfirm">
+                        <i class="fas fa-check text-secondary" onClick="confirmClick(jerseyTeam)"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!------------------------- 號碼 ----------------------------->
+            <div id="jerseyNum" class="flex-column h-100 w-100 trans">
+                <div class="selectHeader py-4">
+                    <p>號碼</p>
+                </div>
+                <div class="selectContain">
+                    <div class="w-75 mx-auto mt-3">
+                        <p class="mb-0">號碼</p>
+                        <input type="text" name="" id="teamNumInput" class="form-control" placeholder="請輸入00~99"
+                            oninput="value=value.replace(/[^\d]/g,'')" maxlength="2" value="23">
+                    </div>
+                    <div class="w-75 mx-auto mt-3">
+                        <p class="mb-0">號碼字體</p>
+                        <select name="" id="teamNumFont" class="custom-select">
+                            <option value="Num-1">Num-1</option>
+                            <option value="Num-2">Num-2</option>
+                            <option value="Num-3">Num-3</option>
+                            <option value="Num-4">Num-4</option>
+                            <option value="Num-5">Num-5</option>
+                            <option value="Num-6">Num-6</option>
+                        </select>
+                    </div>
+                    <div class="w-75 mx-auto mt-3">
+                        <p class="mb-0">號碼顏色</p>
+                        <input type="color" name="" id="teamNumColor" class="form-control" value="#ffffff">
+                    </div>
+                    <div class="w-75 mx-auto mt-3">
+                        <p class="mb-0">號碼邊框顏色</p>
+                        <input type="color" name="" id="numBorderColor" class="form-control" value="#6d6d6d">
+                    </div>
+                    <div class="w-75 mx-auto mt-3">
+                        <p class="mb-0">號碼尺寸</p>
+                        <input type="range" min="-100" max="100" value="0" class="slider form-control"
+                            id="numsizeRange">
+                    </div>
+                    <div class="w-75 mx-auto mt-3">
+                        <p class="mb-0">上下位置</p>
+                        <input type="range" min="-100" max="100" value="0" class="slider form-control"
+                            id="numpositionYRange">
+                    </div>
+                    <div class="w-75 mx-auto mt-3">
+                        <p class="mb-0">左右位置</p>
+                        <input type="range" min="-100" max="100" value="0" class="slider form-control"
+                            id="numpositionXRange">
+                    </div>
+                </div>
+                <div class="selectFooter d-flex text-center py-4">
+                    <div class="selectCancle">
+                        <i class="fas fa-times text-secondary" onClick="cancleClick(jerseyNum)"></i>
+                    </div>
+                    <div class="selectConfirm">
+                        <i class="fas fa-check text-secondary" onClick="confirmClick(jerseyNum)"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!------------------------- 球員姓名 ----------------------------->
+            <div id="jerseyName" class="flex-column h-100 w-100 trans">
+                <div class="selectHeader py-4">
+                    <p>球員姓名</p>
+                </div>
+                <div class="selectContain">
+                    <div class="w-75 mx-auto mt-3">
+                        <p class="mb-0">球員姓名</p>
+                        <input type="text" name="" id="jerseyNameInput" class="form-control" value="PLAYERNAME">
+                    </div>
+                    <div class="w-75 mx-auto mt-3">
+                        <p class="mb-0">姓名字體</p>
+                        <select name="" id="playerNameFont" class="custom-select">
+                            <optgroup label="英文字體">
+                                <option value="E-Player-1">E-Team-1</option>
+                            </optgroup>
+                            <optgroup label="中文字體">
+                                <option value="C-Team-1">華康新綜藝體</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="w-75 mx-auto mt-3">
+                        <p class="mb-0">姓名顏色</p>
+                        <input type="color" name="" id="jerseyNameColor" class="form-control" value="#ffffff">
+                    </div>
+                    <div class="w-75 mx-auto mt-3">
+                        <p class="mb-0">姓名尺寸</p>
+                        <input type="range" min="-100" max="100" value="0" class="slider form-control"
+                            id="namesizeRange">
+                    </div>
+                    <div class="w-75 mx-auto mt-3">
+                        <p class="mb-0">上下位置</p>
+                        <input type="range" min="-100" max="100" value="0" class="slider form-control"
+                            id="namepositionYRange">
+                    </div>
+                </div>
+                <div class="selectFooter d-flex text-center py-4">
+                    <div class="selectCancle">
+                        <i class="fas fa-times text-secondary" onClick="cancleClick(jerseyName)"></i>
+                    </div>
+                    <div class="selectConfirm">
+                        <i class="fas fa-check text-secondary" onClick="confirmClick(jerseyName)"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!------------------------- 隊徽 ----------------------------->
+            <div id="jerseyLogo" class="flex-column h-100 w-100 trans">
+                <div class="selectHeader py-4">
+                    <p>隊徽</p>
+                </div>
+                <div class="selectContain">
+                    <div class="w-75 mx-auto mt-3">
+                        <p class="text-center h5 mb-3">上傳隊徽圖檔</p>
+                        <input id="logoinput" type="file" onchange="readURL(this)" targetID="teamLogo_img" accept="image/jpeg, image/png" >
+                    </div>
+                    <div class="w-75 mx-auto mt-3 text-center">
+                        <hr>
+                        <button class="btn btn-outline-danger" onClick="clearLogo()">清除隊徽</button>
+                    </div>
+                </div>
+                <div class="selectFooter d-flex text-center py-4">
+                    <div class="selectCancle">
+                        <i class="fas fa-times text-secondary" onClick="cancleClick(jerseyLogo)"></i>
+                    </div>
+                    <div class="selectConfirm">
+                        <i class="fas fa-check text-secondary" onClick="confirmClick(jerseyLogo)"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jersey.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+</body>
+
+</html>
