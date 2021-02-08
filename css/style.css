@@ -1,0 +1,437 @@
+#boxLeft{
+    position: relative;
+    background-color: #e5e5e5;
+    height: 100vh;
+    overflow-x:hidden;
+    overflow-y: hidden;
+}
+
+#boxLeftStyleSelect{
+    position: relative;
+    background-color: #e5e5e5;
+    height: 100vh;
+    overflow-x:hidden;
+    overflow-y: hidden;
+}
+
+#boxRight{
+    position: relative;
+    height: 100vh;
+    width:100%;
+    overflow-x:hidden;
+    overflow-y: scroll;
+    padding: 0;
+    background-color: #fff;
+}
+/* 右邊選單控制 */
+#selects{
+    /* display:none; */
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    left: 0px;
+}
+
+#jerseyColor{
+    /* display: none; */
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+    left: 600px;
+}
+
+#jerseyTeam{
+    /* display: none; */
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+    left: 600px;
+}
+
+#jerseyNum{
+    /* display: none; */
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+    left: 600px;
+}
+
+#jerseyName{
+    /* display: none; */
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+    left: 600px;
+}
+
+#jerseyLogo{
+    display:flex;
+    position: absolute;
+    overflow: hidden;
+    left: 600px;
+}
+
+/* 球衣正反面 */
+#myjerseyFront{
+    width:300px;
+    height:100vh;
+    position: absolute;
+    display: block;
+    top:15%;
+    transition: transform 1s ease;    
+    /* transform-origin: center 200px; */
+}
+
+#myjerseyBack{
+    width:300px;
+    height:100vh;
+    position: absolute;
+    display: none;
+    top:15%;
+    transition: transform 1s ease;    
+    transform-origin: center 50px;
+}
+
+.switchBtnBox{
+    width:150px;
+    background-color: rgb(192, 192, 192);
+    margin:0 auto;
+    margin-top:30px;
+    border-radius:20px;
+    z-index:5;
+}
+
+.switchBtn{
+    cursor: pointer;
+    text-align: center;
+}
+
+#front{
+    border-radius: 20px;
+    border:2px solid  rgb(192, 192, 192);
+    background-color: rgb(90, 90, 90);
+}
+
+#back{
+    border-radius:20px;
+    border:2px solid  rgb(192, 192, 192);
+    background-color: rgb(192, 192, 192);
+}
+
+.jerseyContain{
+    position: relative;
+    text-align: center;
+}
+
+#myjerseyFront img,#myjerseyBack img{
+    position:absolute;
+    width:300px;
+    left:50%;
+    transform: translate(-50%,0%);
+}
+
+/* 陰影 */
+#myjerseyFront:before,#myjerseyBack:before{
+    content:'';
+    position: absolute;
+    width:300px;
+    height:50px;
+    background-color: rgba(0,0,0,.7);
+    border-radius: 50%;
+    left:50%;
+    top:500px;
+    transform: translate(-50%,0);
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    -o-filter: blur(20px);
+    -ms-filter: blur(20px);
+    filter: blur(20px);
+}
+
+
+/* 隊名邊框 */
+#teamName{
+    position: absolute;
+    font-size: 40px;
+    text-align: center;
+    top:120px;
+    font-family: E-Team-1;
+    color: #ffffff;
+    z-index: 1;
+    --teamNameBorder:#6d6d6d;
+    left:50%;
+    transform: translateX(-50%);
+    
+}
+
+#teamName.stroke-single:before {
+  content: attr(data-name);
+  position: absolute;
+  -webkit-text-stroke: 0.1em var(--teamNameBorder); 
+  /* mix-blend-mode: hard-light; */
+  z-index: -1;
+}
+
+/* 號碼邊框 */
+#mynumber{
+    position: absolute;
+    font-size: 60px;
+    text-align: center;
+    top:180px;
+    font-family: Num-1;
+    color: #ffffff;
+    --teamNumBorder:#6d6d6d;
+    z-index: 1;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+#mynumberBack{
+    position: absolute;
+    font-size: 100px;
+    text-align: center;
+    top:120px;
+    font-family: Num-1;
+    color: #ffffff;
+    --teamNumBorder:#6d6d6d;
+    left:50%;
+    transform: translate(-50%,0);
+    z-index: 1;
+}
+
+#mynumber.stroke-single:before,#mynumberBack.stroke-single:before {
+    content: attr(data-num);
+    position: absolute;
+    -webkit-text-stroke: 0.1em var(--teamNumBorder); 
+    /* mix-blend-mode: hard-light; */
+    z-index: -1;
+  }
+/* 球員姓名 */
+#playerName{
+    position: absolute;
+    font-size: 30px;
+    text-align: center;
+    top:90px;
+    font-family: E-Player-1;
+    color: #ffffff;
+    left:50%;
+    transform: translate(-50%,0);
+}
+
+  .mySelect{
+      cursor: pointer;
+      text-align: center;
+      margin-top:25px;
+  }
+
+  .mySelect img{
+      width:100px;
+      opacity: .6;
+      filter:grayscale(100%);
+  }
+
+  .mySelect img:hover{
+      opacity: 1;
+      transition:all .3s ease;
+      filter: none;
+      transform:scale(1.1);
+ }
+
+  .mySelect p{
+      margin-top:5px;
+      /* font-weight: bold; */
+      font-size:0.8em;
+  }
+
+.selectHeader {
+    box-shadow: 0 2px 10px rgba(0,0,0,.7);
+    text-align: center;
+    z-index: 1;
+}
+
+.selectHeader p {
+    margin-bottom: 0;
+    font-size: 1.2em;
+}
+
+.selectFooter {
+    box-shadow: 0 -2px 10px rgba(0,0,0,.7);
+    z-index: 1;
+}
+
+.selectFooter i{
+    cursor: pointer;
+}
+
+.selectConfirm {
+    flex:1;
+}
+
+.selectCancle{
+    flex:1;
+}
+
+.fas {
+    font-size: 2em;
+}
+
+.selectContain {
+    flex:1;
+    overflow: hidden scroll;
+}
+.selectFooter i:hover {
+    color:black !important;
+
+}
+
+.colorBox{
+    cursor: pointer;
+}
+
+.colorBox p {
+    margin-bottom: 0px;
+}
+
+
+.colorOption {
+    width: 70px;
+    height: 70px;
+    margin:20px auto 0;
+    border-radius: 10px;
+    transition: all .3s ease;
+}
+
+.colorOption:hover{
+    transform: scale(1.1);
+}
+#colorBlack {
+    background: #000;
+    background: linear-gradient(135deg, rgba(135,135,135,1) 25%, rgba(0,0,0,1) 75%);
+}
+
+#colorWhite {
+    background: rgb(255,255,255);
+    background: linear-gradient(135deg, rgba(255,255,255,1) 25%, rgba(203,203,203,1) 75%);
+}
+
+#colorBlue {
+    background: rgb(104,184,255);
+    background: linear-gradient(135deg, rgba(104,184,255,1) 25%, rgba(0,90,170,1) 75%);
+}
+
+#colorPurple {
+    background: rgb(143,69,176);
+    background: linear-gradient(135deg, rgba(143,69,176,1) 25%, rgba(61,0,88,1) 75%);
+}
+
+#colorRed {
+    background: rgb(222,88,88);
+    background: linear-gradient(135deg, rgba(222,88,88,1) 25%, rgba(88,0,0,1) 75%); 
+}
+
+#colorYellow {
+    background: rgb(255,218,73);
+    background: linear-gradient(135deg, rgb(255 225 76) 25%, rgb(228 152 38) 75%);
+}
+
+#colorForest {
+    background: rgb(89,158,95);
+    background: linear-gradient(135deg, rgba(89,158,95,1) 25%, rgba(0,62,5,1) 75%);
+}
+
+#colorLake {
+    background: rgb(105,199,193);
+    background: linear-gradient(135deg, rgba(105,199,193,1) 25%, rgba(0,94,88,1) 75%);
+}
+
+.w-35{
+    width:35%;
+}
+
+.trans{
+    transition: all .2s ease-in-out;
+}
+
+.trans2{
+    transition: all .2s ease-in-out;
+}
+
+.arrow{
+    cursor: pointer;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top:270px;
+    font-size: 20px;
+    text-align: center;
+    opacity: .3;
+    z-index: 3;
+}
+
+.arrow:hover{
+    opacity: 1;
+}
+
+#forward{
+    right:10%;
+}
+
+#backward{
+    left:10%;
+}
+
+#logoImg{
+    position:absolute;
+    /* background-color: #fff; */
+    width:40px;
+    height:40px;
+    right:80px;
+    top:80px;
+}
+
+#logoImg > #teamLogo_img{
+    width:100%;
+    height: 100%;
+    object-fit: contain;
+    visibility: hidden;
+}
+
+.navbar-toggler{
+    display: none;
+    cursor: pointer;
+}
+
+.row{
+    margin:0;
+}
+@media (max-width: 576px) {
+    #boxRight{
+        display: none;
+    }
+
+    .col-xs {
+        position: absolute !important;
+        top:0;
+        right:0;
+        z-index: 99;
+    }
+    .navbar-toggler{
+        display: block;
+        position: absolute;
+        right:30px;
+        top:10px;
+        z-index: 100;
+    }
+    .mySelect{
+        width: 30%;
+        margin:25px auto 0 auto;
+    }
+  }
+
+  .onoff{
+      display: block !important;
+  }
+  
+  .ooxx{
+      background-image: url('../image/index.png') !important;
+  }

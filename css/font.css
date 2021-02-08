@@ -1,0 +1,52 @@
+/* 隊名字體 */
+@font-face {
+    font-family: E-Team-1;
+    src: url('../fonts/team/KrinkesRegularPERSONAL.ttf');
+}
+@font-face{
+    font-family: E-Team-2;
+    src:url('../fonts/team/Superstar\ M54.ttf');
+}
+@font-face{
+    font-family: E-Team-3;
+    src:url('../fonts/team/Risk\ Everything.otf');
+}
+@font-face{
+    font-family: C-Team-1;
+    src:url('../fonts/team/華康新综藝體W5.TTF');
+}
+@font-face{
+    font-family: C-Team-2;
+    src:url('../fonts/team/KswGoryuNewN.ttf');
+}
+/* 背號字體 */
+@font-face {
+    font-family: Num-1;
+    src: url('../fonts/num/NBA\ Lakers.ttf');
+}
+@font-face {
+    font-family: Num-2;
+    src: url('../fonts/num/NBA\ Atlanta\ Hawks\ 2015.otf');
+}
+@font-face {
+    font-family: Num-3;
+    src: url('../fonts/num/Russell\ Stinger.otf');
+}
+@font-face {
+    font-family: Num-4;
+    src: url('../fonts/num/NBA\ Miami\ Heat\ Home\ Strong.otf');
+}
+@font-face {
+    font-family: Num-5;
+    src: url('../fonts/num/NBA\ Toronto\ Raptors\ 2015.otf');
+}
+@font-face {
+    font-family: Num-6;
+    src: url('../fonts/num/NBA-Brooklyn\ NETS.otf');
+}
+/* 球員姓名字體 */
+@font-face {
+    font-family: E-Player-1;
+    src: url('../fonts/name/NBA\ Denver\ Nuggets\ 2015.otf');
+}
+
